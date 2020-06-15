@@ -1,0 +1,201 @@
+/* pages/goods/goods.wxml.wxss */
+.goods-wrap {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F0F0F0;
+}
+
+.goods-swiper-wrap {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 70rpx;
+  padding-bottom: 48rpx;
+}
+
+.goods-swiper {
+  width: 90%;
+  height: 228rpx;
+  margin: 0 auto;
+}
+
+.swiper-img {
+  width: 100%;
+  height: 228rpx;
+  border-radius: 16rpx;
+}
+
+.goods-tab-wrap {
+  width: 100%;
+  height: 82rpx;
+  background-color: #FFFFFF;
+  padding-bottom: 10rpx;
+}
+
+.custom-tab-class {
+  color: #999999 !important;
+  font-size: 28rpx !important;
+}
+
+.custom-tab_active-class {
+  color: #333333 !important;
+  font-weight: bolder !important;
+}
+
+.goods-content-wrap {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F0F0F0;
+  padding-bottom: 20rpx;
+}
+
+/* 瀑布流flex实现 */
+.goods-content-container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.goods-content-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 0元购 */
+.freeshop-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32rpx;
+  min-height: 400rpx;
+  background-color: #FFFFFF;
+  margin: 16rpx 0;
+}
+
+.freeshop-title {
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 500;
+  line-height: 48rpx;
+}
+
+.freeshop-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.freeshop-goods {
+  width: 218rpx;
+  padding-top: 48rpx;
+}
+
+.freeshop-goods-img,
+.freeshop-goods-img image {
+  width: 218rpx;
+  height: 218rpx;
+  border-radius: 8rpx;
+}
+
+.freeshop-goods-title {
+  display: -webkit-box;
+  color: #333333;
+  font-size: 28rpx;
+  height: 96rpx;
+  line-height: 48rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.freeshop-goods-view {
+  width: 144rpx;
+  height: 48rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #FE2958;
+  font-size: 22rpx;
+  background-color: rgba(254, 41, 88, 0.1);
+  border-radius: 24rpx;
+  margin-top: 16rpx;
+}
+
+.wrap-header{
+  width: 100%;
+  height: 250rpx;
+  position: relative;
+  background: #FFFFFF;
+}
+.wrap-bg{
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-card{
+  width: 686rpx;
+  height: 208rpx;
+  position: absolute;
+  left: 50%;
+  bottom: -26rpx;
+  transform: translateX(-50%);
+}
+.wrap-member-info{
+  position: absolute;
+  bottom: 10rpx;
+  left: 64rpx;
+  height: 150rpx;
+  color:#fff;
+  font-size: 36rpx;
+}
+.member-info-power{
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+.wrap-btn{
+  position: absolute;
+  bottom: 114rpx;
+  right: 20rpx;
+}
+
+.wrap-btn text{
+  color: #ffffff;
+  padding: 10rpx 30rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+}
+
+.coupon-wrap {
+  position: absolute;
+  bottom: 6rpx;
+  left: 24%;
+}
+
+.coupon-wrap > text {
+  padding: 10rpx 30rpx;
+  color: #FFFFFF;
+  background: #6F80AA;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+}
+
+.coupon-wrap > .coupon-vip2 {
+  background: #D8A65D;
+}
+
+.goods-content-column-skeleton {
+  width: 324rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  margin-bottom: 32rpx;
+  min-height: 560rpx;
+}
+
+.freeshop-content-skeleton {
+  width: 240rpx;
+  background-color: #e2e2e2;
+  border-radius: 10rpx;
+  min-height: 362rpx;
+}

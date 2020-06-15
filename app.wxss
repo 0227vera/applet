@@ -1,0 +1,25 @@
+/**app.wxss**/
+@import './static/style/base.wxss';
+
+@font-face {
+  font-family: 'AlibabaPuHuiTi-Medium';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_garetdqe5dj.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_garetdqe5dj.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_garetdqe5dj.woff2') format('woff2'),
+  url('//at.alicdn.com/t/webfont_garetdqe5dj.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_garetdqe5dj.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_garetdqe5dj.svg#AlibabaPuHuiTiM') format('svg'); /* iOS 4.1- */
+}
+page{
+  font-size: 28rpx;
+}
+ button::after {
+  border: none;
+}
+.fix-btn{
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

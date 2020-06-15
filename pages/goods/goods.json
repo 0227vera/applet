@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "硕果福利社",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "goods-card": "./components/GoodsCard/goods-card"
+  }
+}

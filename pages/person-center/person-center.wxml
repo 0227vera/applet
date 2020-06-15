@@ -1,0 +1,54 @@
+<!-- pages/find-pass/find-pass.wxml -->
+<view class="wrap">
+  <view class="wrap-header">
+    <image class="wrap-bg" src="{{['../../static/images/person/normal-bg.png','../../static/images/person/gold-bg.png'][type]}}" mode="scaleToFill"></image>
+    <view class="wrap-info">
+      <navigator target="self" url="/pages/user/user" hover-class="navigator-hover" open-type="navigate">
+        <image src="{{ avatar }}"></image>
+      </navigator>
+      <view class="wrap-info-NP">
+        <text class="name">{{name}}</text>
+        <text class="phone">{{phone}}</text>
+      </view>
+    </view>
+    <image class="wrap-card" src="{{['../../static/images/person/normal.png','../../static/images/person/gold.png'][type]}}"></image>
+    <view class="wrap-member-info">
+      <view>
+        <text>{{['会员','VIP会员'][type]}}</text>
+        <text>{{' | ' + (type ? time : '永久')}}</text>
+      </view>
+      <view class="member-info-power" bindtap="gotoMoney" wx:if="{{!type}}">已为您开通会员专属权益</view>
+      <view wx:else class="member-info-power">已为您开通VIP会员专属权益</view>
+    </view>
+    <view class="wrap-btn">
+      <van-button bind:click="gotoMember" wx:if="{{!type}}" size="small" color="#6F80AA" type="info" round custom-class="person-btn">
+        查看权益
+      </van-button>
+      <van-button bind:click="gotoMember" wx:else color="#D8A65D" size="small" type="info" round custom-class="person-btn">
+        查看权益
+      </van-button>
+    </view>
+  </view>
+  <view class="wrap-container">
+    <view class="my-order">
+      <text>我的订单</text>
+    </view>
+    <view class="wrap-mian">
+      <view class="wrap-content">
+        <view class="wrap-mian-item" wx:for="{{item}}" wx:key="idx" bindtap="chooseOrder" data-type="{{ item.index }}">
+          <image src="{{'../../static/images/person/item'+ item.index + '.png'}}" mode="scaleToFill"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="wrap-list">
+      <view class="wrap-list-content" wx:for="{{list}}" wx:key="idx">
+        <van-cell custom-class="wrap-list-item" icon="{{'/static/images/person/list' + item.index + '.png'}}" is-link title="{{item.title}}" link-type="navigateTo" url="{{item.url}}" />
+      </view>
+    </view>
+    <view class="wrap-esc">
+      <van-button block custom-class="wrap-esc-btn" bind:click="logout">退出登录</van-button>
+    </view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

@@ -1,0 +1,78 @@
+<!-- pages/goods/goods.wxml.wxml -->
+<view class="goods-wrap">
+  <view wx:if="{{ loading }}">
+    <view class="wrap-header"></view>
+    <view class="goods-swiper-wrap"></view>
+    <view class="freeshop-wrapper">
+      <view class="freeshop-content-skeleton"></view>
+    </view>
+    <view class="goods-tab-wrap"></view>
+    <view class="goods-content-wrap">
+      <view class="goods-content-container">
+        <view class="goods-content-column">
+          <view class="goods-content-column-skeleton"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="wrap-header">
+      <image class="wrap-bg" src="{{['../../static/images/person/normal-bg.png','../../static/images/person/gold-bg.png'][type]}}" mode="scaleToFill"></image>
+      <image class="wrap-card" src="{{['../../static/images/person/normal.png','../../static/images/person/gold.png'][type]}}"></image>
+      <view class="wrap-member-info">
+        <view>
+          <text class="word-space">硕果福利社</text>
+          <text class="word-space">|</text>
+          <text>{{['会员','VIP会员'][type]}}</text>
+        </view>
+        <view class="member-info-power">{{ name + ' | ' + employeeId }}</view>
+      </view>
+      <view class="wrap-btn" wx:if="{{ type }}">
+        <text class="wrap-btn_vip2">有效期 | {{ time }}</text>
+      </view>
+      <view class="coupon-wrap" bindtap="toPoster">
+        <text wx:if="{{type>0}}" class="{{ type ? 'coupon-vip2' : '' }}">海量优惠券免费领取点击进入</text>
+         <text wx:else>升级VIP会员，每月领取海量优惠券</text>
+      </view>
+    </view>
+    <view class="goods-swiper-wrap">
+      <swiper class="goods-swiper" indicator-dots="{{ true }}" autoplay="{{ true }}" interval="3000" indicator-color="#FFFFFF" indicator-active-color="#6BB5CF" circular="{{ true }}">
+        <block wx:for="{{ bannerList }}" wx:key="index">
+          <swiper-item>
+            <image mode="aspectFill" bindtap="onClickBanner" data-bannerurl="{{ item.bannerUrl }}" data-goodsid="{{ item.itemId }}" class="swiper-img" src="{{ item.image }}" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 0元购 -->
+    <view wx:if="{{ freeGoodsList.length }}" class="freeshop-wrapper">
+      <view class="freeshop-title">专享0元购</view>
+      <view class="freeshop-content">
+        <view wx:for="{{ freeGoodsList }}" wx:for-item="freeGoods" wx:key="itemId" class="freeshop-goods">
+          <view bindtap="toGoodsDetail" data-id="{{ freeGoods.itemId }}" class="freeshop-goods-img">
+            <image mode="aspectFill" src="{{ freeGoods.coverImage }}" />
+          </view>
+          <view class="freeshop-goods-title">{{ freeGoods.itemName }}</view>
+          <view bindtap="toGoodsDetail" data-id="{{ freeGoods.itemId }}" class="freeshop-goods-view">
+            立即查看
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="goods-tab-wrap">
+      <van-tabs border="{{ false }}" active="{{ active }}" bind:change="onChange" color="#6BB5CF" tab-class="custom-tab-class" tab-active-class="custom-tab_active-class">
+        <van-tab wx:for="{{ tabList }}" wx:key="index" title="{{ item.name }}" name="{{ item.id }}" />
+      </van-tabs>
+    </view>
+    <view class="goods-content-wrap">
+      <view class="goods-content-container">
+        <view class="goods-content-column">
+          <goods-card wx:if="{{ evenGoods.length > 0 }}" goods-data="{{ evenGoods }}" goods-type="{{ active }}" />
+        </view>
+        <view class="goods-content-column">
+          <goods-card wx:if="{{ oddGoods.length > 0 }}" goods-data="{{ oddGoods }}" goods-type="{{ active }}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

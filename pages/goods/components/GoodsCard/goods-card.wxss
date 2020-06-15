@@ -1,0 +1,75 @@
+ /* components/GoodsCard/goods-card.wxml.wxss */
+.goods-card {
+  width: 324rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  margin-bottom: 32rpx;
+}
+
+.test-goods-card {
+  height: 560rpx;
+}
+
+.goods-cover-wrap {
+  width: 100%;
+  height: 328rpx;
+}
+
+.goods-cover {
+  width: 100%;
+  height: 328rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.goods-card_content {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.goods-title {
+  display: -webkit-box;
+  color: #333333;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 48rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.goods-vip {
+  width: 130rpx;
+  height: 32rpx;
+  font-weight: 500;
+  line-height: 32rpx;
+  text-align: center;
+  color: #FE2958;
+  font-size: 20rpx;
+  border: 2rpx solid #FE2958;
+  border-radius: 4rpx;
+  margin-top: 16rpx;
+}
+
+.goods-price {
+  font-family: "AlibabaPuHuiTi-Medium";
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  height: 70rpx;
+ line-height: 60rpx;
+}
+
+.goods-price > .goods-new-price {
+  color: #FE2958;
+  font-size: 32rpx;
+  font-weight: 500;
+  padding-right: 8rpx;
+}
+
+.goods-price > .goods-old-price {
+  text-decoration: line-through;
+  color: #999999;
+  font-size: 24rpx;
+}

@@ -1,0 +1,39 @@
+<!-- pages/login/login.wxml -->
+<view class="wrap">
+  <view class="top-img">
+    <image src="../../static/images/login/login.png" mode="scaleToFill"></image>
+  </view>
+  <view class="cont">
+    <view class="input-block">
+      <image class="img" src="../../static/images/login/icon_user.png" mode="scaleToFill"></image>
+      <input model:value="{{phone}}" id="phone" bindinput="bindName" class="input" type="number" maxlength="11" placeholder="请输入手机号" placeholder-class='placeholder' />
+      <image wx:if="{{phone}}" bindtap="clearValue" id="phone" class="clear" src="../../static/images/login/icon_close.png" mode="scaleToFill"></image>
+    </view>
+    <view class="input-block" wx:if="{{!loginMethod}}">
+      <image class="img" src="../../static/images/login/icon_pass.png" mode="scaleToFill"></image>
+      <input model:value="{{pass}}" password='{{passType === 1}}' id="pass" bindinput="bindName" class="input" placeholder="请输入登录密码" placeholder-class='placeholder' />
+      <image class="icon-eyes-active" bindtap="changeMethod" id="passType" src="{{['../../static/images/login/icon_eyes_active.png','../../static/images/login/icon_eyes.png'][passType]}}" mode="scaleToFill"></image>
+    </view>
+    <view class="input-block" wx:else>
+      <image class="img" src="../../static/images/login/icon_code.png" mode="scaleToFill"></image>
+      <input model:value="{{vaiCode}}" id="vaiCode" type="number" bindinput="bindName" class="input" disabled="{{!phone || !friClick}}" placeholder="请输入验证码" placeholder-class='placeholder' />
+      <button class="btn btn-code" wx:if="{{noSendCode}}" bindtap="getVaiCode" disabled="{{!phone}}">
+        获取验证码
+      </button>
+      <van-button custom-class="btn-code" wx:else loading="{{false}}">{{SurTime}}s后重新获取</van-button>
+    </view>
+    <van-button bindclick="login" disabled="{{!(phone && (vaiCode || pass))}}" custom-class="btn-login" block loading="{{false}}">
+      登 录
+    </van-button>
+    <view class="other-login">
+      <view bindtap="changeMethod" id="loginMethod">{{['验证码登录', '密码登录'][loginMethod]}}</view>
+      <view>
+        <navigator url="/pages/find-pass/find-pass">忘记密码？</navigator>
+      </view>
+    </view>
+    <view class="reg">
+      <navigator url="/pages/register/register">注册</navigator>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+</view>

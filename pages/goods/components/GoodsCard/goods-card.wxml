@@ -1,0 +1,18 @@
+<!-- components/GoodsCard/goods-card.wxml.wxml -->
+<view class="goods-card" wx:for="{{ goodsData }}" wx:key="index">
+  <navigator target="self" url="{{ '/pages/goods-detail/goods-detail?goodsId=' + item.itemId }}" hover-class="navigator-hover" open-type="navigate">
+    <view class="goods-cover-wrap">
+      <image mode="aspectFill" class="goods-cover" src="{{ item.coverImage }}" />
+    </view>
+    <view class="goods-card_content">
+      <view class="goods-title">{{ item.itemName }}</view>
+      <view class="goods-vip">
+        VIP ￥{{ filter.toFixedPrice(item.thriftAmount) }}
+      </view>
+      <view class="goods-price">
+        <view class="goods-new-price">￥{{ filter.toFixedPrice(item.price) }}</view>
+        <view class="goods-old-price">￥{{ filter.toFixedPrice(item.priceMarket) }}</view>
+      </view>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,11 @@
+{
+  "name": "heshuo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitee.com/hu_yajie/heshuo.git",
+  "author": "YaJie",
+  "license": "MIT",
+  "dependencies": {
+    "@vant/weapp": "^1.1.0"
+  }
+}
